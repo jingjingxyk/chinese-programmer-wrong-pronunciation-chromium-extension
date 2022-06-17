@@ -67,8 +67,6 @@ let getIframe = () => {
         "chinese-programmer-wrong-pronunciation-custom-iframe"
     );
     iframe.setAttribute("security", "restricted");
-
-    iframe.setAttribute("security", "restricted");
     box.appendChild(iframe);
   }
   return iframe;
