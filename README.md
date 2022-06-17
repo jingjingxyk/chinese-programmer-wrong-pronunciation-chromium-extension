@@ -3,6 +3,15 @@
 > 为方便[`chinese-programmer-wrong-pronunciation`](https://github.com/shimohq/chinese-programmer-wrong-pronunciation.git)使用而开发的chromium 扩展
  
 
+## 嵌入搜索引擎 有道搜索
+
+![](https://github.com/jingjingxyk/chinese-programmer-wrong-pronunciation/blob/master/tools/chromium_extension/images/%E6%88%AA%E5%9B%BE2022-06-14-22-11.png?raw=true)
+
+## 嵌入搜索引擎 谷歌搜索
+
+![](https://raw.githubusercontent.com/jingjingxyk/chinese-programmer-wrong-pronunciation/master/tools/chromium_extension/images/截图2022-06-14-22-10.png)
+
+
 ### 手动安装扩展
 
 > 1. 下载 [chinese-programmer-wrong-pronunciation](https://github.com/jingjingxyk/chinese-programmer-wrong-pronunciation-chromium-extension/archive/refs/heads/master.zip) 然后解压，找到 `tools/chromium_extension` 子目录
@@ -18,14 +27,6 @@
 2. [Declare permissions](https:////developer.chrome.com/docs/extensions/mv3/declare_permissions/)
 3. [ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN.git)
 4. [shimohq/chinese-programmer-wrong-pronunciation](https://github.com/shimohq/chinese-programmer-wrong-pronunciation.git)
-
-## 嵌入搜索引擎 有道搜索
-
-![](https://github.com/jingjingxyk/chinese-programmer-wrong-pronunciation/blob/master/tools/chromium_extension/images/%E6%88%AA%E5%9B%BE2022-06-14-22-11.png?raw=true)
-
-## 嵌入搜索引擎 谷歌搜索
-
-![](https://raw.githubusercontent.com/jingjingxyk/chinese-programmer-wrong-pronunciation/master/tools/chromium_extension/images/截图2022-06-14-22-10.png)
 
 
 ```text
