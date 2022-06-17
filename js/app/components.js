@@ -57,6 +57,19 @@ let getIframe = () => {
     iframe = box.querySelector(
       "#chinese-programmer-wrong-pronunciation-custom-iframe"
     );
+    iframe.setAttribute('src',"about:blank")
+    //iframe.contentDocument.close()
+    box.removeChild(iframe)
+
+    iframe = document.createElement("iframe");
+    iframe.setAttribute(
+        "id",
+        "chinese-programmer-wrong-pronunciation-custom-iframe"
+    );
+    iframe.setAttribute("security", "restricted");
+
+    iframe.setAttribute("security", "restricted");
+    box.appendChild(iframe);
   }
   return iframe;
 };
