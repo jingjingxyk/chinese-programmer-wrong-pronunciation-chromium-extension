@@ -1,6 +1,6 @@
 # 无页面跳转收听正确读音 的 chromium 扩展
 
-> 为方便`[chinese-programmer-wrong-pronunciation](https://github.com/shimohq/chinese-programmer-wrong-pronunciation.git)`使用而开发的chromium 扩展
+> 为方便[`chinese-programmer-wrong-pronunciation`](https://github.com/shimohq/chinese-programmer-wrong-pronunciation.git)使用而开发的chromium 扩展
  
 
 ### 手动安装扩展
