@@ -1,4 +1,4 @@
-import * as until from "./until.js";
+import * as utils from "./utils.js";
 import * as components from "./components.js";
 import * as searchEngine from "./search-engine.js";
 
@@ -7,7 +7,7 @@ let goToSearchPronounce = (word) => {
   // search_engine_name='gotToYouDaoSearch'
   // search_engine_name = "goToBingDictSearch";
   // search_engine_name = "goToBingSearch";
-  search_engine_name = "gotToYouDaoSearch";
+  //search_engine_name = "gotToYouDaoSearch";
   // search_engine_name = "goToBaiduFanYiSearch";
   let tab = "current_tab";
 
@@ -37,5 +37,5 @@ let goToSearchPronounce = (word) => {
   }
 };
 
-let box = { ...until, ...components, ...searchEngine, goToSearchPronounce };
+let box = { ...utils, ...components, ...searchEngine, goToSearchPronounce };
 export default box;

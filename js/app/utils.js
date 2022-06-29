@@ -18,7 +18,7 @@ function removeClass(el, className) {
 
 function getCookie(name) {
   let arr,
-    reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+      reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
   if ((arr = document.cookie.match(reg))) {
     return decodeURIComponent(arr[2]);
   } else {
@@ -33,14 +33,14 @@ function setCookie(name, value, second, domain) {
   var exp = new Date();
   exp.setTime(exp.getTime() + second * 1000);
   document.cookie =
-    name +
-    "=" +
-    encodeURIComponent(value) +
-    ";expires=" +
-    exp.toGMTString() +
-    ";path=/;domain=" +
-    domain +
-    ";SameSite=None;Secure";
+      name +
+      "=" +
+      encodeURIComponent(value) +
+      ";expires=" +
+      exp.toGMTString() +
+      ";path=/;domain=" +
+      domain +
+      ";SameSite=None;Secure";
 }
 async function getCookies(domain) {
   let cookies = await cookieStore.getAll({ domain: domain });
@@ -73,7 +73,6 @@ function createJSONFile(content, filename) {
   a.download = filename;
   a.click();
   setTimeout(function () {
-    document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
   }, 3000);
 }
