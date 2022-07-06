@@ -4,15 +4,15 @@
 
 ## 最新功能截图
 
-![](https://raw.githubusercontent.com/jingjingxyk/chinese-programmer-wrong-pronunciation-chromium-extension/main/images/%E6%88%AA%E5%9B%BE2022-07-06-16-20-20.png)
+![](https://github.com/jingjingxyk/chinese-programmer-wrong-pronunciation-chromium-extension/main/images/%E6%88%AA%E5%9B%BE2022-07-06-16-20-20.pngraw=true)
 
 ## 嵌入搜索引擎 有道搜索
 
-![](https://raw.githubusercontent.com/jingjingxyk/chinese-programmer-wrong-pronunciation-chromium-extension/main/images/%E6%88%AA%E5%9B%BE2022-06-14-22-11.png?raw=true)
+![](https://github.com/jingjingxyk/chinese-programmer-wrong-pronunciation-chromium-extension/main/images/%E6%88%AA%E5%9B%BE2022-06-14-22-11.png?raw=true)
 
 ## 嵌入搜索引擎 谷歌搜索
 
-![](https://raw.githubusercontent.com/jingjingxyk/chinese-programmer-wrong-pronunciation-chromium-extension/main/images/截图2022-06-14-22-10.png)
+![](https://github.com/jingjingxyk/chinese-programmer-wrong-pronunciation-chromium-extension/main/images/截图2022-06-14-22-10.png)
 
 ### 手动安装扩展
 
