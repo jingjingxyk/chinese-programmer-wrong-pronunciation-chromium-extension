@@ -44,6 +44,10 @@ let getIframe = () => {
       "class",
       "chinese-programmer-wrong-pronunciation-custom-tool-bar"
     );
+    tool_bar.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+    });
 
     let window_close_icon = document.createElement("span");
     window_close_icon.innerText = "❌";
