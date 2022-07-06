@@ -61,7 +61,7 @@ let init = () => {
         }
       });
     let th = document.querySelector("#readme table thead tr th");
-    th.setAttribute("title", "重置扩展搜索结果打开方式");
+    th.setAttribute("title", "重置搜索结果打开方式");
     th.style.cursor = "pointer";
     th.addEventListener("click", (event) => {
       let parentElement = event.target.parentElement;
