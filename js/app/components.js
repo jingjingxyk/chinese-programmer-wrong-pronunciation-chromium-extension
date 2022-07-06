@@ -117,6 +117,8 @@ let showSetSearchEngine = (box, window_close_icon) => {
     let search_engin_provider = {
       goToYouDaoSearch: "有道",
       goToGoogleSearch: "谷歌",
+      goToBingDictSearch: "必应词典",
+      goToBingSearch: "必应",
     };
     let select = document.createElement("select");
     select.setAttribute("name", "search_engin_provider");
