@@ -40,6 +40,10 @@ tr:hover {
   font-size: 16px;
 }
 
+.chinese-programmer-wrong-pronunciation-custom-window-close-icon{
+  margin-right: 4px;
+  margin-left: 10px;
+}
 .chinese-programmer-wrong-pronunciation-custom-tool-bar-setup {
   margin-right: 10px;
   font-size: 20px;
@@ -47,5 +51,5 @@ tr:hover {
 
 .chinese-programmer-wrong-pronunciation-custom-note-reset {
   font-size: 16px;
-  color:#c5955d;
+  color: #c5955d;
 }

@@ -110,46 +110,45 @@ let showSetSearchEngine = (box, window_close_icon) => {
   let opener = getSearchEngineOpener();
 
   {
-    let search_engin_provider={
-      'goToYouDaoSearch':'有道',
-      'goToGoogleSearch':'谷歌'
-    }
+    let search_engin_provider = {
+      goToYouDaoSearch: "有道",
+      goToGoogleSearch: "谷歌",
+    };
     let select = document.createElement("select");
     select.setAttribute("name", "search_engin_provider");
     select.setAttribute("class", "search_engin_provider");
-    let htmlContent=''
+    let htmlContent = "";
     for (let i in search_engin_provider) {
-      let selected=''
-      if(opener && opener.search_engine_name){
-        selected=i===opener.search_engine_name?'selected="selected"':'';
+      let selected = "";
+      if (opener && opener.search_engine_name) {
+        selected = i === opener.search_engine_name ? 'selected="selected"' : "";
       }
-      htmlContent+=`<option value="${i}" ${ selected}>${search_engin_provider[i]}</option>`
+      htmlContent += `<option value="${i}" ${selected}>${search_engin_provider[i]}</option>`;
     }
 
-    select.innerHTML = htmlContent
-
+    select.innerHTML = htmlContent;
 
     select.addEventListener("click", setSearchEngine);
     box.insertBefore(select, window_close_icon);
   }
   {
-    let search_engin_provider_tab={
-      "current_tab":"当前标签展示结果",
-      "new_tab":"新标签展示结果"
-    }
+    let search_engin_provider_tab = {
+      current_tab: "当前标签展示结果",
+      new_tab: "新标签展示结果",
+    };
     let select = document.createElement("select");
     select.setAttribute("class", "search_engin_provider_tab");
     select.setAttribute("name", "search_engin_provider_tab");
-    let htmlContent=''
+    let htmlContent = "";
     for (let i in search_engin_provider_tab) {
-      let selected=''
-      if(opener && opener.tab){
-        selected=i===opener.tab?'selected="selected"':'';
+      let selected = "";
+      if (opener && opener.tab) {
+        selected = i === opener.tab ? 'selected="selected"' : "";
       }
-      htmlContent+=`<option value="${i}" ${ selected}>${search_engin_provider_tab[i]}</option>`
+      htmlContent += `<option value="${i}" ${selected}>${search_engin_provider_tab[i]}</option>`;
     }
 
-    select.innerHTML = htmlContent
+    select.innerHTML = htmlContent;
 
     select.addEventListener("click", setSearchEngineOpener);
     box.insertBefore(select, window_close_icon);
