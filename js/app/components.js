@@ -107,26 +107,49 @@ let getSearchEngineOpener = () => {
 };
 
 let showSetSearchEngine = (box, window_close_icon) => {
+  let opener = getSearchEngineOpener();
+
   {
+    let search_engin_provider={
+      'goToYouDaoSearch':'有道',
+      'goToGoogleSearch':'谷歌'
+    }
     let select = document.createElement("select");
     select.setAttribute("name", "search_engin_provider");
     select.setAttribute("class", "search_engin_provider");
-    select.innerHTML = `
-<option value="goToYouDaoSearch"> 有道</option>
-<option value="goToGoogleSearch"> 谷歌</option>
-`;
+    let htmlContent=''
+    for (let i in search_engin_provider) {
+      let selected=''
+      if(opener && opener.search_engine_name){
+        selected=i===opener.search_engine_name?'selected="selected"':'';
+      }
+      htmlContent+=`<option value="${i}" ${ selected}>${search_engin_provider[i]}</option>`
+    }
+
+    select.innerHTML = htmlContent
+
 
     select.addEventListener("click", setSearchEngine);
     box.insertBefore(select, window_close_icon);
   }
   {
+    let search_engin_provider_tab={
+      "current_tab":"当前标签展示结果",
+      "new_tab":"新标签展示结果"
+    }
     let select = document.createElement("select");
     select.setAttribute("class", "search_engin_provider_tab");
     select.setAttribute("name", "search_engin_provider_tab");
-    select.innerHTML = `
-<option value="current_tab">当前标签展示结果</option>
-<option value="new_tab">新标签展示结果</option>
-`;
+    let htmlContent=''
+    for (let i in search_engin_provider_tab) {
+      let selected=''
+      if(opener && opener.tab){
+        selected=i===opener.tab?'selected="selected"':'';
+      }
+      htmlContent+=`<option value="${i}" ${ selected}>${search_engin_provider_tab[i]}</option>`
+    }
+
+    select.innerHTML = htmlContent
 
     select.addEventListener("click", setSearchEngineOpener);
     box.insertBefore(select, window_close_icon);
@@ -168,14 +191,12 @@ let closeSearchWindow = () => {
 let setSearchEngine = (event) => {
   event.preventDefault();
   event.stopPropagation();
-  console.log(event.target);
   console.log(event.target.value);
   setupConfig(event.target.value, null);
 };
 let setSearchEngineOpener = (event) => {
   event.preventDefault();
   event.stopPropagation();
-  console.log(event.target);
   console.log(event.target.value);
 
   setupConfig(null, event.target.value);

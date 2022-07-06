@@ -60,20 +60,22 @@ let init = () => {
           }
         }
       });
-    let th = document.querySelector("#readme table thead tr th");
-    th.setAttribute("title", "重置搜索结果打开方式");
-    th.style.cursor = "pointer";
-    th.addEventListener("click", (event) => {
-      let parentElement = event.target.parentElement;
-      if (parentElement && parentElement.nodeName === "TR") {
-        if (parentElement.firstElementChild === event.target) {
-          //重置配置
-          event.preventDefault();
-          event.stopPropagation();
-          box.cleanOpener();
-        }
-      }
+    let table = document.querySelector("#readme table");
+    let parent = table.parentNode;
+    let note = document.createElement("span");
+    note.innerText = `⚪重置扩展提供的搜索结果打开方式⚪`;
+    note.setAttribute(
+      "class",
+      "chinese-programmer-wrong-pronunciation-custom-note-reset"
+    );
+
+    note.addEventListener("click", (event) => {
+      //重置配置
+      event.preventDefault();
+      event.stopPropagation();
+      box.cleanOpener();
     });
+    parent.insertBefore(note, table);
   } else {
     console.log("no found README.md table");
   }
