@@ -3,8 +3,8 @@ import * as components from "./components.js";
 import * as searchEngine from "./search-engine.js";
 
 let goToSearchPronounce = (word) => {
-  let search_engine_name = "gotToGoogleSearch";
-  // search_engine_name='gotToYouDaoSearch'
+  let search_engine_name = "goToGoogleSearch";
+  search_engine_name = "goToYouDaoSearch";
   // search_engine_name = "goToBingDictSearch";
   // search_engine_name = "goToBingSearch";
   //search_engine_name = "gotToYouDaoSearch";

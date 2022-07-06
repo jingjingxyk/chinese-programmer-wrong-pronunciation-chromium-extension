@@ -4,7 +4,9 @@ let init = () => {
   let URLObj = new URL(location.href);
   console.log(URLObj);
   if (document.querySelector("#readme table tbody")) {
+    //载入自定义组件样式
     box.styleConfig();
+    //载入自定义组件
     box.customElement();
 
     let audio_player = new Audio();
@@ -58,6 +60,20 @@ let init = () => {
           }
         }
       });
+    let th = document.querySelector("#readme table thead tr th");
+    th.setAttribute("title", "重置扩展搜索结果打开方式");
+    th.style.cursor = "pointer";
+    th.addEventListener("click", (event) => {
+      let parentElement = event.target.parentElement;
+      if (parentElement && parentElement.nodeName === "TR") {
+        if (parentElement.firstElementChild === event.target) {
+          //重置配置
+          event.preventDefault();
+          event.stopPropagation();
+          box.cleanOpener();
+        }
+      }
+    });
   } else {
     console.log("no found README.md table");
   }

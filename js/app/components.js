@@ -1,4 +1,5 @@
 import { prettyBox } from "./pretty-box.js";
+import { hasClass, addClass, removeClass } from "./utils.js";
 
 let styleConfig = () => {
   let css = document.createElement("link");
@@ -38,6 +39,21 @@ let getIframe = () => {
     );
     aside.setAttribute("draggable", "true");
 
+    let tool_bar = document.createElement("div");
+    tool_bar.setAttribute(
+      "class",
+      "chinese-programmer-wrong-pronunciation-custom-tool-bar"
+    );
+
+    let window_close_icon = document.createElement("span");
+    window_close_icon.innerText = "❌";
+    window_close_icon.setAttribute(
+      "class",
+      "chinese-programmer-wrong-pronunciation-custom-window-close-icon"
+    );
+    window_close_icon.addEventListener("click", closeSearchWindow);
+    tool_bar.appendChild(window_close_icon);
+
     iframe = document.createElement("iframe");
     iframe.setAttribute(
       "id",
@@ -45,26 +61,39 @@ let getIframe = () => {
     );
     iframe.setAttribute("security", "restricted");
     //iframe.setAttribute('sandbox',"")
+
+    aside.appendChild(tool_bar);
     aside.appendChild(iframe);
     custom_box.appendChild(aside);
     document.body.appendChild(custom_box);
 
     //设置 box 可 拖拽
     prettyBox(aside);
-    //显示重置按键
-    //showResetCurrentSearchEngineTab()
+    //显示设置按键
+    showSetSearchEngine(tool_bar, window_close_icon);
   } else {
+    if (
+      hasClass(
+        box,
+        "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden"
+      )
+    ) {
+      removeClass(
+        box,
+        "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden"
+      );
+    }
     iframe = box.querySelector(
       "#chinese-programmer-wrong-pronunciation-custom-iframe"
     );
-    iframe.setAttribute('src',"about:blank")
+    iframe.setAttribute("src", "about:blank");
     //iframe.contentDocument.close()
-    box.removeChild(iframe)
+    box.removeChild(iframe);
 
     iframe = document.createElement("iframe");
     iframe.setAttribute(
-        "id",
-        "chinese-programmer-wrong-pronunciation-custom-iframe"
+      "id",
+      "chinese-programmer-wrong-pronunciation-custom-iframe"
     );
     iframe.setAttribute("security", "restricted");
     box.appendChild(iframe);
@@ -77,60 +106,108 @@ let getSearchEngineOpener = () => {
   return JSON.parse(sessionStorage.getItem(opener_key));
 };
 
-let showResetCurrentSearchEngineTab = () => {
-  let div = document.createElement("div");
+let showSetSearchEngine = (box, window_close_icon) => {
+  {
+    let select = document.createElement("select");
+    select.setAttribute("name", "search_engin_provider");
+    select.setAttribute("class", "search_engin_provider");
+    select.innerHTML = `
+<option value="goToYouDaoSearch"> 有道</option>
+<option value="goToGoogleSearch"> 谷歌</option>
+`;
+
+    select.addEventListener("click", setSearchEngine);
+    box.insertBefore(select, window_close_icon);
+  }
+  {
+    let select = document.createElement("select");
+    select.setAttribute("class", "search_engin_provider_tab");
+    select.setAttribute("name", "search_engin_provider_tab");
+    select.innerHTML = `
+<option value="current_tab">当前标签展示结果</option>
+<option value="new_tab">新标签展示结果</option>
+`;
+
+    select.addEventListener("click", setSearchEngineOpener);
+    box.insertBefore(select, window_close_icon);
+  }
+
+  let div = document.createElement("span");
   div.setAttribute(
-    "id",
-    "#chinese-programmer-wrong-pronunciation-custom-tools-bar"
+    "class",
+    "chinese-programmer-wrong-pronunciation-custom-tool-bar-setup"
   );
-  div.innerHTML = `
-        <span>关闭搜索页面</span>🥳🥳🥳🥳🥳🥳<span>更换搜索引擎</span>
-    `;
-
-  document
-    .querySelector("#chinese-programmer-wrong-pronunciation-custom-iframe-box")
-    .appendChild(div);
+  div.innerText = `⚙`;
+  // box.insertBefore(div,select)
 };
-let setSearchEngineOpener = (search_engine_name, tab) => {
-  let opener = getSearchEngineOpener();
-  if (!opener || opener.expired_date < new Date().getTime()) {
-    search_engine_name = "gotToGoogleSearch";
-    /*
-        if (window.confirm('默认有道词典搜索,选择 “取消” 将设置为谷歌搜索,有效期一天')) {  //当前页面展示搜索结果
-            search_engine_name = "gotToYouDaoSearch"
-        } else {
-            //新开标签页展示搜索结果
-           search_engine_name = "gotToGoogleSearch"
-        }
-        */
 
-    //页面展示方式，默认有效期一天
-    let expired_date = new Date().getTime() + 24 * 60 * 60 * 1000;
-    // expired_date = (new Date()).getTime() + 10000  # test expired
-
-    tab = "current_tab";
-    /*
-        if (window.confirm('允许当前页面展示搜索结果')) {  //当前页面展示搜索结果
-            tab = "current_tab"
-        } else {
-            //新开标签页展示搜索结果
-            tab = "new_tab"
-        }
-         */
-
-    sessionStorage.setItem(
-      opener_key,
-      JSON.stringify({
-        tab: tab,
-        expired_date: expired_date,
-        search_engine_name: search_engine_name,
-      })
+//关闭窗口
+let closeSearchWindow = () => {
+  let box = document.querySelector(
+    "#chinese-programmer-wrong-pronunciation-custom-iframe-box"
+  );
+  console.log(box);
+  if (
+    box &&
+    !hasClass(
+      box,
+      "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden"
+    )
+  ) {
+    addClass(
+      box,
+      "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden"
     );
   }
+  let iframe = box.querySelector(
+    "#chinese-programmer-wrong-pronunciation-custom-iframe"
+  );
+  iframe.setAttribute("src", "about:blank");
+};
+
+let setSearchEngine = (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  console.log(event.target);
+  console.log(event.target.value);
+  setupConfig(event.target.value, null);
+};
+let setSearchEngineOpener = (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  console.log(event.target);
+  console.log(event.target.value);
+
+  setupConfig(null, event.target.value);
+};
+
+let setupConfig = (search_engine_name, tab) => {
+  let opener = getSearchEngineOpener();
+  //页面展示方式，默认有效期一天
+  let expired_date = new Date().getTime() + 24 * 60 * 60 * 1000;
+  if (opener) {
+    if (search_engine_name) {
+      opener.search_engine_name = search_engine_name;
+    }
+    if (tab) {
+      opener.tab = tab;
+    }
+  } else {
+    tab = "current_tab";
+    search_engine_name = "goToYouDaoSearch";
+    opener = {
+      tab: tab,
+      expired_date: expired_date,
+      search_engine_name: search_engine_name,
+    };
+  }
+
+  sessionStorage.setItem(opener_key, JSON.stringify(opener));
 };
 
 let cleanOpener = () => {
   sessionStorage.removeItem(opener_key);
+  console.log("重置扩展搜索结果打开方式配置---ok");
 };
 
 export {
@@ -139,4 +216,5 @@ export {
   getIframe,
   getSearchEngineOpener,
   setSearchEngineOpener,
+  cleanOpener,
 };

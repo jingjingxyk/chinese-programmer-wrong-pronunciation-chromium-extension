@@ -1,9 +1,9 @@
-let gotToGoogleSearch = (word) => {
+let goToGoogleSearch = (word) => {
   word = word.replace(/\s/, "+");
   return `https://www.google.com/search?q=how+to+pronounce+${word}`;
 };
 
-let gotToYouDaoSearch = (word) => {
+let goToYouDaoSearch = (word) => {
   word = word.replace(/\s/, "+");
   return `https://www.youdao.com/result?word=${word}&lang=en`;
 };
@@ -35,8 +35,8 @@ let goToBaiDuHanYu = () => {
 
 export {
   goToBaiDuHanYu,
-  gotToYouDaoSearch,
-  gotToGoogleSearch,
+  goToYouDaoSearch,
+  goToGoogleSearch,
   goToBingDictSearch,
   goToBingSearch,
   goToBaiduDictSearch,
