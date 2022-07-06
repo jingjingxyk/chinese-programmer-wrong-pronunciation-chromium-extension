@@ -3,11 +3,11 @@
 > 为方便[`chinese-programmer-wrong-pronunciation`](https://github.com/shimohq/chinese-programmer-wrong-pronunciation.git)使用而开发的 chromium 扩展
 
 ## 最新功能截图
-![](https://github.com/jingjingxyk/chinese-programmer-wrong-pronunciation-chromium-extension/blob/master/images/%E6%88%AA%E5%9B%BE2022-07-06-16-20-20.png)
+![](https://raw.githubusercontent.com/jingjingxyk/chinese-programmer-wrong-pronunciation-chromium-extension/blob/master/images/%E6%88%AA%E5%9B%BE2022-07-06-16-20-20.png)
 
 ## 嵌入搜索引擎 有道搜索
 
-![](https://github.com/jingjingxyk/chinese-programmer-wrong-pronunciation-chromium-extension/blob/master/images/%E6%88%AA%E5%9B%BE2022-06-14-22-11.png?raw=true)
+![](https://raw.githubusercontent.com/jingjingxyk/chinese-programmer-wrong-pronunciation-chromium-extension/blob/master/images/%E6%88%AA%E5%9B%BE2022-06-14-22-11.png?raw=true)
 
 ## 嵌入搜索引擎 谷歌搜索
 
