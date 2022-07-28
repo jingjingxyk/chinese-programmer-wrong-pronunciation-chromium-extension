@@ -1,5 +1,5 @@
 import { prettyBox } from "./pretty-box.js";
-import { hasClass, addClass, removeClass } from "./utils.js";
+import { hasClass, addClass, removeClass } from "/libs/utils.js";
 
 let styleConfig = () => {
   let css = document.createElement("link");
@@ -117,6 +117,7 @@ let showSetSearchEngine = (box, window_close_icon) => {
     let search_engin_provider = {
       goToYouDaoSearch: "有道",
       goToGoogleSearch: "谷歌",
+      goToSouGouFanYiSearch: "搜狗",
       goToBingDictSearch: "必应词典",
       goToBingSearch: "必应",
     };

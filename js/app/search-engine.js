@@ -15,9 +15,13 @@ let goToBingSearch = (word) => {
   return `https://cn.bing.com/search?q=how%20to%20pronounce%20${word}`;
 };
 
+let goToSouGouFanYiSearch=(word)=>{
+  return `https://fanyi.sogou.com/text?keyword=${word}&fr=websearch_submit&from=en&to=zh-CHS`
+}
 export {
   goToYouDaoSearch,
   goToGoogleSearch,
   goToBingDictSearch,
-  goToBingSearch
+  goToBingSearch,
+  goToSouGouFanYiSearch
 };
