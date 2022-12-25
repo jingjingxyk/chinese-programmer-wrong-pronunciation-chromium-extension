@@ -7,8 +7,9 @@ chrome.action.onClicked.addListener((tab) => {
     url: "https://github.com/shimohq/chinese-programmer-wrong-pronunciation.git",
   });
   //gitcode.net 未适配
+  /*
   chrome.tabs.create({
     url: "https://gitcode.net/mirrors/shimohq/chinese-programmer-wrong-pronunciation.git",
   });
-
+  */
 });
