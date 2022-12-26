@@ -33,7 +33,10 @@ let init = () => {
             audio_url = aTag.getAttribute("href");
           }
         }
-        if (event.target.nodeName === "IMG") {
+        if (
+          event.target.nodeName === "IMG" ||
+          event.target.nodeName === "G-EMOJI"
+        ) {
           let aTag = event.target.parentNode.parentNode;
           audio_url = aTag.getAttribute("href");
         }

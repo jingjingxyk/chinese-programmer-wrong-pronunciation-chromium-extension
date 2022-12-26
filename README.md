@@ -2,7 +2,6 @@
 
 > 为方便[`chinese-programmer-wrong-pronunciation`](https://github.com/shimohq/chinese-programmer-wrong-pronunciation.git)使用而开发的 chromium 扩展
 
-
 ## 使用说明
 
 - 点击第一列，调用的是搜索框页面
@@ -31,8 +30,7 @@
 
 ### 扩展下载方式二：（已经构建好，可以上传扩展市场的代码）推荐这种最快捷
 
-* [chinese-programmer-wrong-pronunciation-chromium-extension.zip支持 chromium 系列浏览器](https://www.jingjingxyk.com/chromium-extension/chinese-programmer-wrong-pronunciation-chromium-extension.zip)
-
+- [chinese-programmer-wrong-pronunciation-chromium-extension.zip 支持 chromium 系列浏览器](https://www.jingjingxyk.com/chromium-extension/chinese-programmer-wrong-pronunciation-chromium-extension.zip)
 
 ## 扩展开发参考
 
