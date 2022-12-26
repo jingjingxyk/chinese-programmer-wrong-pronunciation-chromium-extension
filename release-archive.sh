@@ -26,6 +26,7 @@ zip -r dist/chinese-programmer-wrong-pronunciation-chromium-extension.zip . \
   -x "local-deploy.sh" \
   -x "format-code.sh" \
   -x "release-archive.sh" \
+  -x "update-library.sh" \
   -x "dist/*" \
   -x "images/*"
 
