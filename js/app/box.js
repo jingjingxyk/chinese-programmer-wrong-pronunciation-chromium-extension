@@ -1,4 +1,4 @@
-import * as utils from "/libs/utils.js";
+import * as utils from "/third_party/jingjingxyk/frontend-utils/utils.js";
 import * as components from "./components.js";
 import * as searchEngine from "./search-engine.js";
 

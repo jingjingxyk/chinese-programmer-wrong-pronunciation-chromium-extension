@@ -1,4 +1,4 @@
-import { addClass, removeClass } from "/libs/utils.js";
+import { addClass, removeClass } from "/third_party/jingjingxyk/frontend-utils/utils.js";
 
 let prettyBox = (box) => {
   // 参考 https://blog.csdn.net/weixin_41910848/article/details/82218243
