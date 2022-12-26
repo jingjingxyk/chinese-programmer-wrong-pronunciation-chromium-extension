@@ -1,5 +1,9 @@
 import { prettyBox } from "./pretty-box.js";
-import { hasClass, addClass, removeClass } from "/third_party/jingjingxyk/frontend-utils/utils.js";
+import {
+  hasClass,
+  addClass,
+  removeClass,
+} from "/third_party/jingjingxyk/frontend-utils/utils.js";
 
 let styleConfig = () => {
   let css = document.createElement("link");
