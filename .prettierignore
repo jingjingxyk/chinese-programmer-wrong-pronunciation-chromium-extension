@@ -1,1 +1,9 @@
 /third_party/
+dist/
+.idea
+node_modules
+package-lock.json
+_metadata
+dist/
+local-deploy.sh
+/temp
