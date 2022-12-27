@@ -4,7 +4,7 @@
 
 ## 使用说明
 
-- 点击扩展图标即可自动打开[`chinese-programmer-wrong-pronunciation仓库`](https://github.com/shimohq/chinese-programmer-wrong-pronunciation.git)
+- 点击扩展图标-自动打开[`chinese-programmer-wrong-pronunciation`](https://github.com/shimohq/chinese-programmer-wrong-pronunciation.git)仓库
 - 点击第一列，调用的是搜索框页面 (搜索框右上角，可以切换搜索引擎，和切换页面打开方式)
 - 点击第二列和第三列，调用的播放音频功能
 - 点击 ⚪ 恢复扩展默认配置 ⚪
