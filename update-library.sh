@@ -15,13 +15,26 @@ fi
 # example use proxy download source code
 # shell之变量默认值  https://blog.csdn.net/happytree001/article/details/120980066
 # 使用代理下载源码
-# bash  update-library.sh --proxy 1
+# bash  update-library.sh --proxy http://127.0.0.1:8015
 
-PROXY_URL=${2:+'http://127.0.0.1:8015'}
 
-export http_proxy=$PROXY_URL
-export https_proxy=$PROXY_URL
-export no_proxy='0.0.0.0/8,10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,233.252.0.0/24,240.0.0.0/4,255.255.255.255/32,localhost,.npmmirror.com,.aliyuncs.com,.taobao.org,.tsinghua.edu.cn,.ustc.edu.cn,.aliyun.com'
+PROXY_URL=''
+while [ $# -gt 0 ]; do
+  case "$1" in
+  --proxy)
+    PROXY_URL="$2"
+    export http_proxy=$PROXY_URL
+    export https_proxy=$PROXY_URL
+    shift
+    ;;
+  --*)
+    echo "Illegal option $1"
+    ;;
+  esac
+  shift $(($# > 0 ? 1 : 0))
+done
+
+
 mkdir -p temp
 cd ${__DIR__}/temp
 

@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: release extension
-        run: npm run release
+        run: sh release-archive.sh
       - name: production artifacts
         uses: actions/upload-artifact@v3
         with:
