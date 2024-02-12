@@ -3,14 +3,11 @@ import box from "./box.js";
 let init = () => {
   let URLObj = new URL(location.href);
   console.log(URLObj);
-  if (
-    document.querySelector(
-      "#repo-content-pjax-container article.markdown-body table",
-    )
-  ) {
-    let table_element = document.querySelector(
-      "#repo-content-pjax-container article.markdown-body table",
-    );
+  let table_element = document.querySelector(
+      "#repo-content-pjax-container article.markdown-body table"
+  );
+  if (table_element) {
+
 
     //载入自定义组件样式
     box.styleConfig();
@@ -76,7 +73,7 @@ let init = () => {
     note.innerText = `⚪恢复扩展默认配置⚪`;
     note.setAttribute(
       "class",
-      "chinese-programmer-wrong-pronunciation-custom-note-reset",
+      "chinese-programmer-wrong-pronunciation-custom-note-reset"
     );
 
     note.addEventListener("click", (event) => {

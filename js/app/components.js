@@ -17,36 +17,36 @@ let customElement = () => {
   let link = document.createElement("link");
   link.setAttribute(
     "href",
-    chrome.runtime.getURL("web-components/x-custom-box.html"),
+    chrome.runtime.getURL("web-components/x-custom-box.html")
   );
   document.head.appendChild(link);
 };
 
 let getIframe = () => {
   let box = document.querySelector(
-    "#chinese-programmer-wrong-pronunciation-custom-iframe-box",
+    "#chinese-programmer-wrong-pronunciation-custom-iframe-box"
   );
   let iframe = null;
   if (!box) {
     let custom_box = document.createElement(
-      "x-chinese-programmer-wrong-pronunciation-custom-box",
+      "x-chinese-programmer-wrong-pronunciation-custom-box"
     );
 
     let aside = document.createElement("aside");
     aside.setAttribute(
       "id",
-      "chinese-programmer-wrong-pronunciation-custom-iframe-box",
+      "chinese-programmer-wrong-pronunciation-custom-iframe-box"
     );
     aside.setAttribute(
       "class",
-      "chinese-programmer-wrong-pronunciation-custom-iframe-box",
+      "chinese-programmer-wrong-pronunciation-custom-iframe-box"
     );
     aside.setAttribute("draggable", "true");
 
     let tool_bar = document.createElement("div");
     tool_bar.setAttribute(
       "class",
-      "chinese-programmer-wrong-pronunciation-custom-tool-bar",
+      "chinese-programmer-wrong-pronunciation-custom-tool-bar"
     );
     tool_bar.addEventListener("click", (event) => {
       event.preventDefault();
@@ -57,7 +57,7 @@ let getIframe = () => {
     window_close_icon.innerText = "❌";
     window_close_icon.setAttribute(
       "class",
-      "chinese-programmer-wrong-pronunciation-custom-window-close-icon",
+      "chinese-programmer-wrong-pronunciation-custom-window-close-icon"
     );
     window_close_icon.addEventListener("click", closeSearchWindow);
     tool_bar.appendChild(window_close_icon);
@@ -65,7 +65,7 @@ let getIframe = () => {
     iframe = document.createElement("iframe");
     iframe.setAttribute(
       "id",
-      "chinese-programmer-wrong-pronunciation-custom-iframe",
+      "chinese-programmer-wrong-pronunciation-custom-iframe"
     );
     iframe.setAttribute("security", "restricted");
     //iframe.setAttribute('sandbox',"")
@@ -83,16 +83,16 @@ let getIframe = () => {
     if (
       hasClass(
         box,
-        "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden",
+        "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden"
       )
     ) {
       removeClass(
         box,
-        "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden",
+        "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden"
       );
     }
     iframe = box.querySelector(
-      "#chinese-programmer-wrong-pronunciation-custom-iframe",
+      "#chinese-programmer-wrong-pronunciation-custom-iframe"
     );
     iframe.setAttribute("src", "about:blank");
     //iframe.contentDocument.close()
@@ -101,7 +101,7 @@ let getIframe = () => {
     iframe = document.createElement("iframe");
     iframe.setAttribute(
       "id",
-      "chinese-programmer-wrong-pronunciation-custom-iframe",
+      "chinese-programmer-wrong-pronunciation-custom-iframe"
     );
     iframe.setAttribute("security", "restricted");
     box.appendChild(iframe);
@@ -168,7 +168,7 @@ let showSetSearchEngine = (box, window_close_icon) => {
   let div = document.createElement("span");
   div.setAttribute(
     "class",
-    "chinese-programmer-wrong-pronunciation-custom-tool-bar-setup",
+    "chinese-programmer-wrong-pronunciation-custom-tool-bar-setup"
   );
   div.innerText = `⚙`;
   // box.insertBefore(div,select)
@@ -177,23 +177,23 @@ let showSetSearchEngine = (box, window_close_icon) => {
 //关闭窗口
 let closeSearchWindow = () => {
   let box = document.querySelector(
-    "#chinese-programmer-wrong-pronunciation-custom-iframe-box",
+    "#chinese-programmer-wrong-pronunciation-custom-iframe-box"
   );
   console.log(box);
   if (
     box &&
     !hasClass(
       box,
-      "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden",
+      "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden"
     )
   ) {
     addClass(
       box,
-      "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden",
+      "chinese-programmer-wrong-pronunciation-custom-iframe-box-hidden"
     );
   }
   let iframe = box.querySelector(
-    "#chinese-programmer-wrong-pronunciation-custom-iframe",
+    "#chinese-programmer-wrong-pronunciation-custom-iframe"
   );
   iframe.setAttribute("src", "about:blank");
 };

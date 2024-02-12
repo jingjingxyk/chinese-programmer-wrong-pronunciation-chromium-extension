@@ -17,7 +17,7 @@ let prettyBox = (box) => {
 
     removeClass(
       box,
-      "chinese-programmer-wrong-pronunciation-custom-iframe-box",
+      "chinese-programmer-wrong-pronunciation-custom-iframe-box"
     );
 
     box.style.left = left + "px";
