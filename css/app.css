@@ -1,4 +1,4 @@
-tr:hover {
+#repo-content-pjax-container article.markdown-body table tr:hover {
   border: 8px solid #ddd !important;
   border-radius: 8px !important;
   box-shadow: 5px 5px 15px #daf5fe !important;
