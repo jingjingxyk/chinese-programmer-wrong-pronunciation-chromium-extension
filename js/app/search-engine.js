@@ -23,5 +23,5 @@ export {
   goToGoogleSearch,
   goToBingDictSearch,
   goToBingSearch,
-  goToSouGouFanYiSearch,
+  goToSouGouFanYiSearch
 };

@@ -1,6 +1,6 @@
 import {
   addClass,
-  removeClass,
+  removeClass
 } from "/third_party/jingjingxyk/frontend-utils/utils.js";
 
 let prettyBox = (box) => {

@@ -2,7 +2,7 @@ import { prettyBox } from "./pretty-box.js";
 import {
   hasClass,
   addClass,
-  removeClass,
+  removeClass
 } from "/third_party/jingjingxyk/frontend-utils/utils.js";
 
 let styleConfig = () => {
@@ -123,7 +123,7 @@ let showSetSearchEngine = (box, window_close_icon) => {
       goToGoogleSearch: "谷歌",
       goToSouGouFanYiSearch: "搜狗",
       goToBingDictSearch: "必应词典",
-      goToBingSearch: "必应",
+      goToBingSearch: "必应"
     };
     let select = document.createElement("select");
     select.setAttribute("name", "search_engin_provider");
@@ -145,7 +145,7 @@ let showSetSearchEngine = (box, window_close_icon) => {
   {
     let search_engin_provider_tab = {
       current_tab: "当前标签展示结果",
-      new_tab: "新标签展示结果",
+      new_tab: "新标签展示结果"
     };
     let select = document.createElement("select");
     select.setAttribute("class", "search_engin_provider_tab");
@@ -229,7 +229,7 @@ let setupConfig = (search_engine_name, tab) => {
     opener = {
       tab: tab,
       expired_date: expired_date,
-      search_engine_name: search_engine_name,
+      search_engine_name: search_engine_name
     };
   }
 
@@ -247,5 +247,5 @@ export {
   getIframe,
   getSearchEngineOpener,
   setSearchEngineOpener,
-  cleanOpener,
+  cleanOpener
 };
