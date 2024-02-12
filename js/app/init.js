@@ -4,11 +4,9 @@ let init = () => {
   let URLObj = new URL(location.href);
   console.log(URLObj);
   let table_element = document.querySelector(
-      "#repo-content-pjax-container article.markdown-body table"
+    "#repo-content-pjax-container article.markdown-body table"
   );
   if (table_element) {
-
-
     //载入自定义组件样式
     box.styleConfig();
     //载入自定义组件
